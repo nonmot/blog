@@ -16,6 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.views.generic import TemplateView
+from django.conf.urls.static import static
+from config.settings import common
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -24,3 +27,5 @@ urlpatterns = [
     path('api/v1/auth/', include('djoser.urls.jwt')),
     path('api/v1/', include('apiv1.urls')),
 ]
+
+urlpatterns += static(common.MEDIA_URL, document_root=common.MEDIA_ROOT)

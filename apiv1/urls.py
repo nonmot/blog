@@ -5,6 +5,8 @@ from . import views
 
 router = routers.DefaultRouter()
 router.register('blog', views.BlogViewSet)
+router.register('category', views.CategoryViewSet)
+
 
 app_name = 'apiv1'
 

@@ -3,3 +3,4 @@ __pycache__/
 config/settings/local.py
 
 frontend
+media
