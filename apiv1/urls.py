@@ -11,5 +11,6 @@ router.register('category', views.CategoryViewSet)
 app_name = 'apiv1'
 
 urlpatterns = [
-    path('', include(router.urls))
+    path('', include(router.urls)),
+    path('blog/category/<int:category>', views.CategorizedBlogViewSet.as_view())
 ]
