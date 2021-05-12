@@ -19,7 +19,7 @@ class Blog(models.Model):
     title = models.CharField(verbose_name='タイトル', max_length=50)
     content = models.TextField(verbose_name='内容')
     thumbnail = models.ImageField(default='NoImage.png')
-    category = models.ManyToManyField(Category, verbose_name='カテゴリー', blank=True, null=True)
+    category = models.ManyToManyField(Category, verbose_name='カテゴリー', blank=True)
     created_at = models.DateTimeField(verbose_name='作成日時', auto_now_add=True)
     updated_at = models.DateTimeField(verbose_name='更新日時', auto_now=True)
 
