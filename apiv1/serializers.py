@@ -1,5 +1,5 @@
 from rest_framework import serializers
-import markdown
+from django.contrib.auth.hashers import make_password
 
 from blog.models import Blog, Category
 from accounts.models import CustomUser
@@ -18,3 +18,6 @@ class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = CustomUser
         fields = ['username', 'image', 'profile']
+
+    def validate_password(self, value:str) -> str:
+        return make_password(value)

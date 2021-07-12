@@ -23,8 +23,8 @@ class CategorizedBlogViewSet(generics.ListAPIView):
 
     def get_queryset(self):
         queryset = Blog.objects.all()
-        category_id = self.kwargs['category']
-        category = Category.objects.get(id=category_id)
+        category = self.kwargs['category']
+        category = Category.objects.get(name=category)
         queryset = queryset.filter(category=category)
         return queryset
 
