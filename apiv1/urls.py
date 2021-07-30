@@ -13,5 +13,6 @@ app_name = 'apiv1'
 
 urlpatterns = [
     path('', include(router.urls)),
-    path('blog/category/<str:category>/', views.CategorizedBlogViewSet.as_view())
+    path('blog/category/<str:category>/', views.CategorizedBlogViewSet.as_view()),
+    path('owner/', views.UserViewSet.as_view({'get': 'owner'}))
 ]

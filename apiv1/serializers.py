@@ -17,7 +17,7 @@ class CategorySerializer(serializers.ModelSerializer):
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = CustomUser
-        fields = ['username', 'image', 'profile']
+        fields = ['id', 'username', 'email', 'image', 'profile']
 
     def validate_password(self, value:str) -> str:
         return make_password(value)
