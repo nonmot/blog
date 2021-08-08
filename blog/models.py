@@ -21,6 +21,7 @@ class Blog(models.Model):
     category = models.ManyToManyField(Category, verbose_name='カテゴリー', blank=True)
     created_at = models.DateTimeField(verbose_name='作成日時', auto_now_add=True)
     updated_at = models.DateTimeField(verbose_name='更新日時', auto_now=True)
+    is_published = models.BooleanField(verbose_name='公開フラグ', default=False)
 
     def __str__(self):
         return self.title
