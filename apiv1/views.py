@@ -7,11 +7,14 @@ from rest_framework.response import Response
 from blog.models import Blog, Category
 from .serializers import BlogSerializer, CategorySerializer, UserSerializer
 from apiv1 import serializers
+from .permissions import PublicOrSuperUser
+from .filters import IsPublicOrSuperuser
 
 class BlogViewSet(viewsets.ModelViewSet):
     queryset = Blog.objects.all()
     serializer_class = BlogSerializer
-    permission_classes = [IsAuthenticatedOrReadOnly]
+    permission_classes = [IsAuthenticatedOrReadOnly, PublicOrSuperUser]
+    filter_backends = [IsPublicOrSuperuser]
 
 class CategoryViewSet(viewsets.ModelViewSet):
     queryset = Category.objects.all()
@@ -21,7 +24,8 @@ class CategoryViewSet(viewsets.ModelViewSet):
 # カテゴリーごとに記事を返す
 class CategorizedBlogViewSet(generics.ListAPIView):
     serializer_class = BlogSerializer
-    permission_classes = [IsAuthenticatedOrReadOnly]
+    permission_classes = [IsAuthenticatedOrReadOnly, PublicOrSuperUser]
+    filter_backends = [IsPublicOrSuperuser]
 
     def get_queryset(self):
         queryset = Blog.objects.all()
