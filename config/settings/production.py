@@ -21,6 +21,6 @@ CLOUDINARY_STORAGE = {
     'API_SECRET': os.environ.get('API_SECRET')
 }
 
-CORS_ORIGIN_WHITELIST = [
+CORS_ORIGIN_WHITELIST = (
     'https://jovial-gates-acd3c5.netlify.app'
-]
+)
