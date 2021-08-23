@@ -1,4 +1,3 @@
-from config.settings.local import CORS_ORIGIN_ALLOW_ALL, CORS_ORIGIN_WHITELIST
 from .common import *
 import dj_database_url
 
