@@ -20,6 +20,3 @@ CLOUDINARY_STORAGE = {
     'API_SECRET': env('API_SECRET')
 }
 
-CORS_ORIGIN_WHITELIST = (
-    'lovephys.com'
-)
