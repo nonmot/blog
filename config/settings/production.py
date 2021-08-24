@@ -1,7 +1,7 @@
 from .common import *
 import dj_database_url
 
-SECRET_KEY = os.environ.get('SECRET_KEY')
+SECRET_KEY = env('SECRET_KEY')
 
 DEBUG = False
 
@@ -16,8 +16,8 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 CLOUDINARY_STORAGE = {
     'CLOUDINARY_NAME': 'hm3adoj0t',
-    'API_KEY': os.environ.get('API_KEY'),
-    'API_SECRET': os.environ.get('API_SECRET')
+    'API_KEY': env('API_KEY'),
+    'API_SECRET': env('API_SECRET')
 }
 
 CORS_ORIGIN_WHITELIST = (
