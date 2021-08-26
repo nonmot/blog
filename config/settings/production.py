@@ -20,3 +20,8 @@ CLOUDINARY_STORAGE = {
     'API_SECRET': env('API_SECRET')
 }
 
+CORS_ORIGIN_WHITELIST = [
+    'https://lovephys.com',
+]
+
+CORS_ALLOW_CREDENTIALS = True
