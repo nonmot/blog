@@ -22,6 +22,10 @@ CORS_ORIGIN_WHITELIST = [
     'https://lovephys.com',
 ]
 
+CORS_ALLOW_HEADERS = (
+    'access-control-allow-origin'
+)
+
 CORS_ALLOW_CREDENTIALS = True
 
 # 静的ファイルを配置する場所
