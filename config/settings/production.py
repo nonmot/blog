@@ -27,3 +27,5 @@ CORS_ALLOW_CREDENTIALS = True
 # 静的ファイルを配置する場所
 STATIC_ROOT = '/usr/share/nginx/html/static'
 MEDIA_ROOT = '/usr/share/nginx/html/media'
+
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
