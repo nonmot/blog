@@ -21,7 +21,7 @@ from config.settings import common
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('non/admin/', admin.site.urls),
     path('', TemplateView.as_view(template_name='index.html')),
     re_path('^api/v1/auth/', include('djoser.urls')),
     re_path('^api/v1/auth/', include('djoser.urls.jwt')),

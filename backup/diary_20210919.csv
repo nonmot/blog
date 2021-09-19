@@ -1,0 +1,58 @@
+id,user,title,content,created_at,updated_at,is_published
+1,nonmot0614@gmail.com,DjangoRestFrameworkとVue.jsで作る本格ブログ,"このブログはDjango Rest Framework(以下、DRF)とVue.jsで作っています。
+
+はじめの環境構築の仕方を紹介します。ここではPythonとVue CLIの環境は整っているとして話を進めます。それではやっていきましょう！
+
+[TOC]
+
+## Djangoの環境構築
+まずはDjangoをインストールします。
+```bash
+$ pip install django
+```
+次に、Djangoのプロジェクトを立ち上げます。
+```bash
+$ django-admin startproject blog
+```
+続く...
+
+## Vue.jsの環境構築
+はじめにnode.jsをインストールします。
+```bash
+$ sudo apt install node
+```",<QuerySet [<Category: プログラミング>]>,2021-08-20 23:31:21.537105+00:00,2021-08-20 23:31:21.537152+00:00
+2,nonmot0614@gmail.com,【解析力学】最小作用の原理,"解析力学の最も重要で基本的な原理となる「最小作用の原理」について説明します。
+
+[TOC]
+
+## ラグランジアンの導入
+まず初めに、ラグランジアンという量を導入します。ラグランジアンの定義は以下のようになります。
+
+$$
+L=K-V
+$$
+
+ここで、$K$は運動エネルギー(Kinetic energy)で$V$はポテンシャルエネルギー(Potential energy)です。
+
+具体例として、重力場中の1粒子を考えてみましょう。この粒子のラグランジアンは以下のようになります。
+
+```ASCIIMATH
+L = \frac{1}{2} m\dot{q}^2 - mgq
+```
+
+ここで$q$は粒子の位置座標です。
+
+## 最小作用の原理
+ラグランジアンが導入できたので、いよいよ最小作用の原理に入っていきます。これは、「作用が最小(正確には極小)になるような運動が実現する」という原理です。
+
+作用はラグランジアンを用いて次のように定義できます。
+
+```ASCIIMATH
+S[q] = \int L(q,\dot{q}) dt
+```
+
+この作用について、変分を考えましょう。
+
+```ASCIIMATH
+\delta S = S[q+\delta q] - S[q]
+```","<QuerySet [<Category: 物理>, <Category: 解析力学>]>",2021-08-20 23:31:46.009891+00:00,2021-09-19 11:47:02.108761+00:00
