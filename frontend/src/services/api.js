@@ -13,8 +13,8 @@ api.interceptors.request.use(function(config) {
     const token = localStorage.getItem('access')
     if(token) {
         config.headers.Authorization = 'JWT ' + token
-        return config
     }
+
     return config
 }, function(error) {
     return Promise.reject(error)

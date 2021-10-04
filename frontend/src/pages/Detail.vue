@@ -108,6 +108,9 @@ export default {
                 .then(() => {
                     this.$router.replace('/')
                 })
+                .catch((err) => {
+                    console.log(err)
+                })
             }
         },
     },

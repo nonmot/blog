@@ -26,7 +26,7 @@ urlpatterns = [
     re_path('^api/v1/auth/', include('djoser.urls')),
     re_path('^api/v1/auth/', include('djoser.urls.jwt')),
     re_path('^api/v1/', include('apiv1.urls')),
-    re_path('^.*$', TemplateView.as_view(template_name='index.html'))
+    # re_path('^.*$', TemplateView.as_view(template_name='index.html'))
 ]
 
 urlpatterns += static(common.MEDIA_URL, document_root=common.MEDIA_ROOT)

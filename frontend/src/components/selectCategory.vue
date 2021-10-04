@@ -8,7 +8,6 @@
                 :value="item.id"
             >{{ item.name }}</option>
         </select>
-        selectCategory:{{ selectedCategory }}
     </div>
 </template>
 

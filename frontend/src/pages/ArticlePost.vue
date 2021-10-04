@@ -17,8 +17,8 @@ export default {
     data() {
         return {
             form: {
-                title: String,
-                content: String,
+                title: null,
+                content: null,
             }
         }
     },

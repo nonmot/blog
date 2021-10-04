@@ -1,7 +1,6 @@
 <template>
     <v-container>
         <ArticleForm :form="form" @submit="updateArticle" @selected="selected" :selectedCategory="selectedCategory"/>
-        {{ form.selectedCategory }}
     </v-container>
 </template>
 
