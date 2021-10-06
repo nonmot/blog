@@ -42,8 +42,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'djoser',
     'corsheaders',
-    'cloudinary_storage',
-    'cloudinary',
+    'storages',
 
     'blog.apps.BlogConfig',
     'accounts.apps.AccountsConfig',

@@ -10,13 +10,15 @@ ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com', 'lovephys.com', env('ALLOWED_HOS
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
 
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+DEFAULT_FILE_STORAGE = 'config.backends.MediaStorage'
+AWS_ACCESS_KEY_ID = env('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = env('AWS_SECRET_ACCESS_KEY')
+AWS_STORAGE_BUCKET_NAME = env('AWS_STORAGE_BUCKET_NAME')
 
-CLOUDINARY_STORAGE = {
-    'CLOUDINARY_NAME': 'hm3adoj0t',
-    'API_KEY': env('API_KEY'),
-    'API_SECRET': env('API_SECRET')
-}
+
+STATICFILES_STORAGES = 'storages.backends.s3boto3.S3Boto3Storage'
+STATIC_URL = 'http://' + AWS_STORAGE_BUCKET_NAME + '.s3.amazonaws.com/'
+
 
 CORS_ALLOWED_ORIGINS = [
     'https://lovephys.com',
@@ -24,9 +26,9 @@ CORS_ALLOWED_ORIGINS = [
 
 CORS_ALLOW_CREDENTIALS = True
 
-# 静的ファイルを配置する場所
-STATIC_ROOT = '/usr/share/nginx/html/static'
-MEDIA_ROOT = '/usr/share/nginx/html/media'
+# # 静的ファイルを配置する場所
+# STATIC_ROOT = '/usr/share/nginx/html/static'
+# MEDIA_ROOT = '/usr/share/nginx/html/media'
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
