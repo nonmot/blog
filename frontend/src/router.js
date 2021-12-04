@@ -15,7 +15,10 @@ const router = new VueRouter({
     routes: [
         {
             path: '/',
-            component: TopPage
+            component: TopPage,
+            meta: {
+                description: "物理学科に在籍する大学生の書くブログです。主に物理のことやプログラミングのことについて書いています。"
+            }
         },
         {
             path: '/category/:category',
@@ -44,6 +47,10 @@ const router = new VueRouter({
 })
 
 router.beforeEach((to, from, next) => {
+    if (to.meta.description) {
+        document.querySelector("meta[name='description']").setAttribute('content', to.meta.description)
+    }
+
     const isLoggedIn = store.getters.isLoggedIn
     const token = localStorage.getItem('access')
 

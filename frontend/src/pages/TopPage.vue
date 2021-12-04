@@ -86,11 +86,12 @@ export default {
     created() {
         this.getTags()
         this.getArticles()
+        console.log("hello")
+
     },
 
     mounted() {
         document.title = "Mot's Diary"
-        // document.querySelector("meta[name='description']").setAttribute('content', "物理学科に在籍する大学生の書くブログです。主に物理のことやプログラミングのことについて書いています。")
     },
 
     watch: {
